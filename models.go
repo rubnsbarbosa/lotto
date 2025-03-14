@@ -12,6 +12,7 @@ type Data struct {
 	DataApuracao string   `json:"dataApuracao"`
 	DataProximoS string   `json:"dataProximoConcurso"`
 	NumSorteados []string `json:"listaDezenas"`
+	TrvSorteados []string `json:"trevosSorteados"`
 	ListaPremios []Premio `json:"listaRateioPremio"`
 	LocalSorteio string   `json:"localSorteio"`
 	MunicSorteio string   `json:"nomeMunicipioUFSorteio"`
