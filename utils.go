@@ -1,19 +1,30 @@
 package main
 
 import (
-	"strconv"
+	"fmt"
 	"strings"
 )
 
-func FormatCurrency(value float64) string {
-	s := strconv.FormatFloat(value, 'f', 0, 64)
-	parts := []string{}
-	for i := len(s); i > 0; i -= 3 {
-		start := i - 3
-		if start < 0 {
-			start = 0
-		}
-		parts = append([]string{s[start:i]}, parts...)
+func FormatCurrency(amount float64) string {
+	formatted := fmt.Sprintf("%.2f", amount)
+
+	parts := strings.Split(formatted, ".")
+	integerPart := parts[0]
+	decimalPart := ""
+	if len(parts) > 1 {
+		decimalPart = "," + parts[1]
+	} else {
+		decimalPart = ",00"
 	}
-	return strings.Join(parts, ".")
+
+	var formattedInteger strings.Builder
+	n := len(integerPart)
+	for i := 0; i < n; i++ {
+		formattedInteger.WriteByte(integerPart[i])
+		if (n-i-1)%3 == 0 && i < n-1 {
+			formattedInteger.WriteByte('.')
+		}
+	}
+
+	return formattedInteger.String() + decimalPart
 }
