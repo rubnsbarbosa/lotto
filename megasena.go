@@ -58,14 +58,14 @@ func GetLatestMegaSenaResult() {
 	fmt.Printf("Concurso: %d (%s)\n\n", megasena.ConcursoNume, megasena.DataApuracao)
 
 	fmt.Printf("Sorteio realizado no %s em %s\n", megasena.LocalSorteio, megasena.MunicSorteio)
-	fmt.Printf("Numeros Sorteados: %s\n\n", strings.Join(megasena.NumSorteados, ", "))
+	fmt.Printf("Números sorteados: %s\n\n", strings.Join(megasena.NumSorteados, ", "))
 
 	fmt.Printf("-------------------------------------------------------\n\n")
 	for _, premio := range megasena.ListaPremios {
 
 		if premio.Faixa == 1 {
 			fmt.Println("Mega Sena:", premio.DescricaoFaixa)
-			fmt.Printf("%d ganhadores, R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
+			fmt.Printf("%d ganhador(es), R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
 		}
 
 		if premio.Faixa == 2 {
@@ -83,6 +83,6 @@ func GetLatestMegaSenaResult() {
 	if megasena.Acumulado {
 		fmt.Println("Acumulou!!!")
 	}
-	fmt.Println("Proximo Sorteio:", megasena.DataProximoS)
-	fmt.Println("Valor Estimado do Proximo Concurso R$", FormatCurrency(megasena.ProximoValor))
+	fmt.Println("Próximo sorteio:", megasena.DataProximoS)
+	fmt.Println("Valor estimado do próximo concurso R$", FormatCurrency(megasena.ProximoValor))
 }

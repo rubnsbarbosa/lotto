@@ -45,27 +45,28 @@ func GetLatestQuinaResult() {
 		os.Exit(1)
 	}
 
-	fmt.Println("                                    ")
-	fmt.Println("    ____        _                   ")
-	fmt.Println("   / __ \\      (_)                 ")
-	fmt.Println("  | |  | |_   _ _ _ __   __ _       ")
-	fmt.Println("  | |  | | | | | | '_ \\ / _` |     ")
-	fmt.Println("  | |__| | |_| | | | | | (_| |      ")
-	fmt.Println("   \\____\\_\\__,_|_|_| |_|\\__,_|  ")
-	fmt.Println("                                    ")
+	fmt.Println("               _                  ")
+	fmt.Println("              (_)                 ")
+	fmt.Println("    __ _ _   _ _ _ __   __ _      ")
+	fmt.Println("   / _` | | | | | '_ \\ / _` |    ")
+	fmt.Println("  | (_| | |_| | | | | | (_| |     ")
+	fmt.Println("   \\__, |\\__,_|_|_| |_|\\__,_|  ")
+	fmt.Println("      | |                         ")
+	fmt.Println("      |_|                         ")
+	fmt.Println("                                  ")
 
 	fmt.Println("Resultado")
 	fmt.Printf("Concurso: %d (%s)\n\n", quina.ConcursoNume, quina.DataApuracao)
 
 	fmt.Printf("Sorteio realizado no %s em %s\n", quina.LocalSorteio, quina.MunicSorteio)
-	fmt.Printf("Numeros Sorteados: %s\n\n", strings.Join(quina.NumSorteados, ", "))
+	fmt.Printf("Números sorteados: %s\n\n", strings.Join(quina.NumSorteados, ", "))
 
 	fmt.Printf("-------------------------------------------------------\n\n")
 	for _, premio := range quina.ListaPremios {
 
 		if premio.Faixa == 1 {
 			fmt.Println("Quina:", premio.DescricaoFaixa)
-			fmt.Printf("%d ganhadores, R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
+			fmt.Printf("%d ganhador(es), R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
 		}
 
 		if premio.Faixa == 2 {
@@ -88,6 +89,6 @@ func GetLatestQuinaResult() {
 	if quina.Acumulado {
 		fmt.Println("Acumulou!!!")
 	}
-	fmt.Println("Proximo Sorteio:", quina.DataProximoS)
-	fmt.Println("Valor Estimado do Proximo Concurso R$", FormatCurrency(quina.ProximoValor))
+	fmt.Println("Próximo sorteio:", quina.DataProximoS)
+	fmt.Println("Valor estimado do próximo concurso R$", FormatCurrency(quina.ProximoValor))
 }

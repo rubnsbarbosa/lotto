@@ -45,8 +45,8 @@ func GetLatestLotoFacilResult() {
 		os.Exit(1)
 	}
 
-	fmt.Println("   _       _         __           _ _       ")
-	fmt.Println("  | |     | |       / _|         (_) |      ")
+	fmt.Println("   _       _         __  __       _ _       ")
+	fmt.Println("  | |     | |       / _|/_/      (_) |      ")
 	fmt.Println("  | | ___ | |_ ___ | |_ __ _  ___ _| |      ")
 	fmt.Println("  | |/ _ \\| __/ _ \\|  _/ _` |/ __| | |    ")
 	fmt.Println("  | | (_) | || (_) | || (_| | (__| | |      ")
@@ -57,14 +57,14 @@ func GetLatestLotoFacilResult() {
 	fmt.Printf("Concurso: %d (%s)\n\n", lotofacil.ConcursoNume, lotofacil.DataApuracao)
 
 	fmt.Printf("Sorteio realizado no %s em %s\n", lotofacil.LocalSorteio, lotofacil.MunicSorteio)
-	fmt.Printf("Numeros Sorteados: %s\n\n", strings.Join(lotofacil.NumSorteados, ", "))
+	fmt.Printf("Números sorteados: %s\n\n", strings.Join(lotofacil.NumSorteados, ", "))
 
 	fmt.Printf("-----------------------------------------------------------------------------\n\n")
 	for _, premio := range lotofacil.ListaPremios {
 
 		if premio.Faixa == 1 {
 			fmt.Println("1ª faixa:", premio.DescricaoFaixa)
-			fmt.Printf("%d ganhadores, R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
+			fmt.Printf("%d ganhador(es), R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
 		}
 
 		if premio.Faixa == 2 {
@@ -92,6 +92,6 @@ func GetLatestLotoFacilResult() {
 	if lotofacil.Acumulado {
 		fmt.Println("Acumulou!!!")
 	}
-	fmt.Println("Proximo Sorteio:", lotofacil.DataProximoS)
-	fmt.Println("Valor Estimado do Proximo Concurso R$", FormatCurrency(lotofacil.ProximoValor))
+	fmt.Println("Próximo sorteio:", lotofacil.DataProximoS)
+	fmt.Println("Valor estimado do próximo concurso R$", FormatCurrency(lotofacil.ProximoValor))
 }

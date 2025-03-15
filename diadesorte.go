@@ -57,7 +57,7 @@ func GetLatestDiaDeSorteResult() {
 	fmt.Printf("Concurso: %d (%s)\n\n", diadesorte.ConcursoNume, diadesorte.DataApuracao)
 
 	fmt.Printf("Sorteio realizado no %s em %s\n", diadesorte.LocalSorteio, diadesorte.MunicSorteio)
-	fmt.Printf("Numeros Sorteados: %s\n\n", strings.Join(diadesorte.NumSorteados, ", "))
+	fmt.Printf("Números sorteados: %s\n\n", strings.Join(diadesorte.NumSorteados, ", "))
 
 	fmt.Printf("----------------------------------------------------------\n\n")
 	for _, premio := range diadesorte.ListaPremios {
@@ -92,6 +92,6 @@ func GetLatestDiaDeSorteResult() {
 	if diadesorte.Acumulado {
 		fmt.Println("Acumulou!!!")
 	}
-	fmt.Println("Proximo Sorteio:", diadesorte.DataProximoS)
-	fmt.Println("Valor Estimado do Proximo Concurso R$", FormatCurrency(diadesorte.ProximoValor))
+	fmt.Println("Próximo sorteio:", diadesorte.DataProximoS)
+	fmt.Println("Valor estimado do próximo concurso R$", FormatCurrency(diadesorte.ProximoValor))
 }

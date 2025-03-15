@@ -58,7 +58,7 @@ func GetLatestSuperSeteResult() {
 	fmt.Printf("Concurso: %d (%s)\n\n", supersete.ConcursoNume, supersete.DataApuracao)
 
 	fmt.Printf("Sorteio realizado no %s em %s\n", supersete.LocalSorteio, supersete.MunicSorteio)
-	fmt.Printf("Numeros Sorteados: %s\n\n", strings.Join(supersete.NumSorteados, ", "))
+	fmt.Printf("Números sorteados: %s\n\n", strings.Join(supersete.NumSorteados, ", "))
 
 	fmt.Printf("----------------------------------------------------------\n\n")
 	for _, premio := range supersete.ListaPremios {
@@ -93,6 +93,6 @@ func GetLatestSuperSeteResult() {
 	if supersete.Acumulado {
 		fmt.Println("Acumulou!!!")
 	}
-	fmt.Println("Proximo Sorteio:", supersete.DataProximoS)
-	fmt.Println("Valor Estimado do Proximo Concurso R$", FormatCurrency(supersete.ProximoValor))
+	fmt.Println("Próximo sorteio:", supersete.DataProximoS)
+	fmt.Println("Valor estimado do próximo concurso R$", FormatCurrency(supersete.ProximoValor))
 }

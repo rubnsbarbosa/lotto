@@ -57,15 +57,15 @@ func GetLatestMaisMilionariaResult() {
 	fmt.Printf("Concurso: %d (%s)\n\n", milionaria.ConcursoNume, milionaria.DataApuracao)
 
 	fmt.Printf("Sorteio realizado no %s em %s\n", milionaria.LocalSorteio, milionaria.MunicSorteio)
-	fmt.Printf("Numeros Sorteados: %s\n", strings.Join(milionaria.NumSorteados, ", "))
-	fmt.Printf("Trevos Sorteados: %s\n\n", strings.Join(milionaria.TrvSorteados, ", "))
+	fmt.Printf("Números sorteados: %s\n", strings.Join(milionaria.NumSorteados, ", "))
+	fmt.Printf("Trevos sorteados: %s\n\n", strings.Join(milionaria.TrvSorteados, ", "))
 
 	fmt.Printf("-------------------------------------------------------\n\n")
 	for _, premio := range milionaria.ListaPremios {
 
 		if premio.Faixa == 1 {
 			fmt.Println("1ª faixa:", premio.DescricaoFaixa)
-			fmt.Printf("%d ganhadores, R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
+			fmt.Printf("%d ganhador(es), R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
 		}
 
 		if premio.Faixa == 2 {
@@ -118,6 +118,6 @@ func GetLatestMaisMilionariaResult() {
 	if milionaria.Acumulado {
 		fmt.Println("Acumulou!!!")
 	}
-	fmt.Println("Proximo Sorteio:", milionaria.DataProximoS)
-	fmt.Println("Valor Estimado do Proximo Concurso R$", FormatCurrency(milionaria.ProximoValor))
+	fmt.Println("Próximo sorteio:", milionaria.DataProximoS)
+	fmt.Println("Valor estimado do próximo concurso R$", FormatCurrency(milionaria.ProximoValor))
 }

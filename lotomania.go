@@ -57,14 +57,14 @@ func GetLatestLotoManiaResult() {
 	fmt.Printf("Concurso: %d (%s)\n\n", lotomania.ConcursoNume, lotomania.DataApuracao)
 
 	fmt.Printf("Sorteio realizado no %s em %s\n", lotomania.LocalSorteio, lotomania.MunicSorteio)
-	fmt.Printf("Numeros Sorteados: %s\n\n", strings.Join(lotomania.NumSorteados, ", "))
+	fmt.Printf("Números sorteados: %s\n\n", strings.Join(lotomania.NumSorteados, ", "))
 
 	fmt.Printf("-------------------------------------------------------------------------------------------------\n\n")
 	for _, premio := range lotomania.ListaPremios {
 
 		if premio.Faixa == 1 {
 			fmt.Println("1ª faixa:", premio.DescricaoFaixa)
-			fmt.Printf("%d ganhadores, R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
+			fmt.Printf("%d ganhador(es), R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
 		}
 
 		if premio.Faixa == 2 {
@@ -102,6 +102,6 @@ func GetLatestLotoManiaResult() {
 	if lotomania.Acumulado {
 		fmt.Println("Acumulou!!!")
 	}
-	fmt.Println("Proximo Sorteio:", lotomania.DataProximoS)
-	fmt.Println("Valor Estimado do Proximo Concurso R$", FormatCurrency(lotomania.ProximoValor))
+	fmt.Println("Próximo sorteio:", lotomania.DataProximoS)
+	fmt.Println("Valor estimado do próximo concurso R$", FormatCurrency(lotomania.ProximoValor))
 }

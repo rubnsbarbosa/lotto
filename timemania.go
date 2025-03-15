@@ -57,14 +57,14 @@ func GetLatestTimeManiaResult() {
 	fmt.Printf("Concurso: %d (%s)\n\n", timemania.ConcursoNume, timemania.DataApuracao)
 
 	fmt.Printf("Sorteio realizado no %s em %s\n", timemania.LocalSorteio, timemania.MunicSorteio)
-	fmt.Printf("Numeros Sorteados: %s\n\n", strings.Join(timemania.NumSorteados, ", "))
+	fmt.Printf("Números sorteados: %s\n\n", strings.Join(timemania.NumSorteados, ", "))
 
 	fmt.Printf("-------------------------------------------------------\n\n")
 	for _, premio := range timemania.ListaPremios {
 
 		if premio.Faixa == 1 {
 			fmt.Println("1ª faixa:", premio.DescricaoFaixa)
-			fmt.Printf("%d ganhadores, R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
+			fmt.Printf("%d ganhador(es), R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
 		}
 
 		if premio.Faixa == 2 {
@@ -97,6 +97,6 @@ func GetLatestTimeManiaResult() {
 	if timemania.Acumulado {
 		fmt.Println("Acumulou!!!")
 	}
-	fmt.Println("Proximo Sorteio:", timemania.DataProximoS)
-	fmt.Println("Valor Estimado do Proximo Concurso R$", FormatCurrency(timemania.ProximoValor))
+	fmt.Println("Próximo sorteio:", timemania.DataProximoS)
+	fmt.Println("Valor estimado do próximo concurso R$", FormatCurrency(timemania.ProximoValor))
 }

@@ -58,15 +58,15 @@ func GetLatestDuplaSenaResult() {
 	fmt.Printf("Concurso: %d (%s)\n\n", duplasena.ConcursoNume, duplasena.DataApuracao)
 
 	fmt.Printf("Sorteio realizado no %s em %s\n", duplasena.LocalSorteio, duplasena.MunicSorteio)
-	fmt.Printf("Numeros do 1ª sorteio: %s\n", strings.Join(duplasena.NumSorteados, ", "))
-	fmt.Printf("Numeros do 2ª sorteio: %s\n\n", strings.Join(duplasena.ND2Sorteados, ", "))
+	fmt.Printf("Números do 1ª sorteio: %s\n", strings.Join(duplasena.NumSorteados, ", "))
+	fmt.Printf("Números do 2ª sorteio: %s\n\n", strings.Join(duplasena.ND2Sorteados, ", "))
 
 	fmt.Printf("-------------------------------------------------------\n\n")
 	for _, premio := range duplasena.ListaPremios {
 
 		if premio.Faixa == 1 {
 			fmt.Println("1ª faixa:", premio.DescricaoFaixa)
-			fmt.Printf("%d ganhadores, R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
+			fmt.Printf("%d ganhador(es), R$ %s\n\n", premio.NumGanhadores, FormatCurrency(premio.ValorPremio))
 		}
 
 		if premio.Faixa == 2 {
@@ -109,6 +109,6 @@ func GetLatestDuplaSenaResult() {
 	if duplasena.Acumulado {
 		fmt.Println("Acumulou!!!")
 	}
-	fmt.Println("Proximo Sorteio:", duplasena.DataProximoS)
-	fmt.Println("Valor Estimado do Proximo Concurso R$", FormatCurrency(duplasena.ProximoValor))
+	fmt.Println("Próximo sorteio:", duplasena.DataProximoS)
+	fmt.Println("Valor estimado do próximo concurso R$", FormatCurrency(duplasena.ProximoValor))
 }
